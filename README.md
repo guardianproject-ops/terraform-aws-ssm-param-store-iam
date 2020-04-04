@@ -76,7 +76,7 @@ Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest re
 
 
 ```hcl
-module "gitlab_ci_settings" {
+module "ssm_param_store_iam_role" {
   source          = "git::https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam?ref=tags/0.1.0"
 
   path_prefix = var.name
@@ -142,7 +142,6 @@ Are you using this project or any of our other projects? Let us know at [@guardi
 
 Check out these related projects.
 
-- [terraform-aws-lambda-instance-cleanup](https://gitlab.com/guardianproject-ops/terraform-aws-lambda-instance-cleanup) - Terraform module that installs lambda function to cleanup EC2 instances
 
 
 

@@ -28,7 +28,7 @@ introduction: |-
 usage: |-
 
   ```hcl
-  module "gitlab_ci_settings" {
+  module "ssm_param_store_iam_role" {
     source          = "git::https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam?ref=tags/0.1.0"
 
     path_prefix = var.name
@@ -41,10 +41,7 @@ usage: |-
   }
   ```
 
-related:
-  - name: terraform-aws-lambda-instance-cleanup
-    description: Terraform module that installs lambda function to cleanup EC2 instances
-    url: https://gitlab.com/guardianproject-ops/terraform-aws-lambda-instance-cleanup
+related: []
 
 include:
   - "docs/terraform.md"
