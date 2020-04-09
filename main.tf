@@ -18,7 +18,8 @@ data "aws_caller_identity" "current" {
 }
 
 locals {
-  full_prefix = var.prefix_with_label ? "/${var.namespace}-${var.stage}-${var.name}/${var.path_prefix}" : "/${var.path_prefix}"
+  path_prefix_name_friendly = replace(var.path_prefix, "/[^a-zA-Z0-9-]/", "-")
+  full_prefix               = var.prefix_with_label ? "/${var.namespace}-${var.stage}-${var.name}/${var.path_prefix}" : "/${var.path_prefix}"
 }
 
 resource "aws_iam_role" "default" {
@@ -78,7 +79,7 @@ data "aws_iam_policy_document" "default_with_kms" {
 }
 
 resource "aws_iam_policy" "default_with_kms" {
-  name        = "${module.label.id}-${var.path_prefix}"
+  name        = "${module.label.id}-${local.path_prefix_name_friendly}"
   description = "Policy that allows EC2 instances to get their SSM params with path prefix ${local.full_prefix}"
   policy      = data.aws_iam_policy_document.default_with_kms.json
 }
