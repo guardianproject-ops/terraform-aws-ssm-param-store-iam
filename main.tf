@@ -18,7 +18,7 @@ data "aws_caller_identity" "current" {
 }
 
 locals {
-  full_prefix = "/${var.namespace}-${var.stage}-${var.name}/${var.path_prefix}"
+  full_prefix = var.prefix_with_label ? "/${var.namespace}-${var.stage}-${var.name}/${var.path_prefix}" : "/${var.path_prefix}"
 }
 
 resource "aws_iam_role" "default" {

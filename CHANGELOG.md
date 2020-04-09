@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+- `prefix_with_label` option added so you can fully control the path prefix.
+
 ### Changed
 ### Removed
 
