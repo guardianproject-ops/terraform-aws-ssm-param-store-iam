@@ -19,7 +19,9 @@ data "aws_caller_identity" "current" {
 
 locals {
   path_prefix_name_friendly = replace(var.path_prefix, "/[^a-zA-Z0-9-]/", "-")
-  full_prefix               = var.prefix_with_label ? "/${var.namespace}-${var.stage}-${var.name}/${var.path_prefix}" : "/${var.path_prefix}"
+  full_prefix_input         = var.prefix_with_label ? "${var.namespace}-${var.stage}-${var.name}/${var.path_prefix}" : "${var.path_prefix}"
+  full_prefix               = substr(local.full_prefix_input, 0, 1) == "/" ? local.full_prefix_input : "/${local.full_prefix_input}"
+
 }
 
 resource "aws_iam_role" "default" {

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - ensured the names of created resources have invalid characters (like '/')
   removed, even though they may appear in the `path_prefix`
+- handles the case when `path_prefix` is already prefixed with a `/` (and `prefix_with_label` is false)
 
 ### Removed
 
