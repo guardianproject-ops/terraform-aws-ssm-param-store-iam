@@ -5,23 +5,32 @@
 * that begin with a prefix. Also allos the instance to fetch its own tags.
 */
 module "label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.16.0"
-  namespace  = var.namespace
-  name       = var.name
-  stage      = var.stage
-  delimiter  = var.delimiter
-  attributes = var.attributes
-  tags       = var.tags
+  source      = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.16.0"
+  namespace   = var.namespace
+  name        = var.name
+  stage       = var.stage
+  environment = var.environment
+  delimiter   = var.delimiter
+  attributes  = var.attributes
+  tags        = var.tags
 }
 
 data "aws_caller_identity" "current" {
 }
 
 locals {
+  label_order = ["namespace", "environment", "stage", "name"]
+  id_context = {
+    name        = module.label.name
+    namespace   = module.label.namespace
+    environment = module.label.environment
+    stage       = module.label.stage
+  }
+  labels                    = [for l in local.label_order : local.id_context[l] if length(local.id_context[l]) > 0]
+  label_prefix              = lower(join(module.label.delimiter, local.labels))
   path_prefix_name_friendly = replace(var.path_prefix, "/[^a-zA-Z0-9-]/", "-")
-  full_prefix_input         = var.prefix_with_label ? "${var.namespace}-${var.stage}-${var.name}/${var.path_prefix}" : "${var.path_prefix}"
+  full_prefix_input         = var.prefix_with_label ? "${local.label_prefix}/${var.path_prefix}" : "${var.path_prefix}"
   full_prefix               = substr(local.full_prefix_input, 0, 1) == "/" ? local.full_prefix_input : "/${local.full_prefix_input}"
-
 }
 
 resource "aws_iam_role" "default" {
