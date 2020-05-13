@@ -11,7 +11,7 @@ module "label" {
   stage       = var.stage
   environment = var.environment
   delimiter   = var.delimiter
-  attributes  = var.attributes
+  attributes  = concat(var.attributes, ["ssm-prefix"])
   tags        = var.tags
 }
 
@@ -90,7 +90,7 @@ data "aws_iam_policy_document" "default_with_kms" {
 }
 
 resource "aws_iam_policy" "default_with_kms" {
-  name        = "${module.label.id}-${local.path_prefix_name_friendly}"
+  name        = module.label.id
   description = "Policy that allows EC2 instances to get their SSM params with path prefix ${local.full_prefix}"
   policy      = data.aws_iam_policy_document.default_with_kms.json
 }
