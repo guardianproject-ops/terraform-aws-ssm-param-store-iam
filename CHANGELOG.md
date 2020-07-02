@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/compare/1.1.0...2.0.0) (2020-07-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* This name change will cause your roles to be
+re-created, but nothing has functionally changed.
+
+### Features
+
+* Reduce length of IAM role name ([d0d05e6](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/commit/d0d05e6d57a8716091f0bf4f5c2bc7e1a4181393))
+
 ## 1.1.0 (2020-05-13)
 
 
