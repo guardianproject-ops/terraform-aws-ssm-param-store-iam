@@ -11,7 +11,7 @@ module "label" {
   stage       = var.stage
   environment = var.environment
   delimiter   = var.delimiter
-  attributes  = concat(var.attributes, ["ssm-prefix"])
+  attributes  = concat(var.attributes, ["ssm"])
   tags        = var.tags
 }
 
@@ -34,7 +34,7 @@ locals {
 }
 
 resource "aws_iam_role" "default" {
-  name = "${module.label.id}-ssm-access"
+  name = "${module.label.id}-r"
   path = "/"
 
   assume_role_policy = <<EOF
