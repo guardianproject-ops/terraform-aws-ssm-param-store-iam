@@ -111,13 +111,14 @@ that begin with a prefix. Also allos the instance to fetch its own tags.
 |------|-------------|------|---------|:-----:|
 | attributes | Additional attributes (e.g., `one', or `two') | `list` | `[]` | no |
 | delimiter | Delimiter to be used between `namespace`, `stage`, `name`, and `attributes` | `string` | `"-"` | no |
+| environment | Environment (e.g. `test`, `dev`) | `string` | `""` | no |
 | kms\_key\_arn | n/a | `string` | `"The KMS Key arn used to encrypt the SSM Parameters"` | no |
 | name | Name  (e.g. `app` or `database`) | `string` | n/a | yes |
 | namespace | Namespace (e.g. `org`) | `string` | n/a | yes |
 | path\_prefix | The path prefix to allow the instance to read from. IThe full prefix will be /namespace-stage-name/path\_prefix | `string` | n/a | yes |
 | prefix\_with\_label | If true, then the full prefix will be /namespace-stage-name/path\_prefix. If you want to fully control the prefix, set this to false, in which case the full prefix will be /path\_prefix | `bool` | `true` | no |
 | region | n/a | `string` | n/a | yes |
-| stage | Environment (e.g. `test`, `dev`) | `string` | n/a | yes |
+| stage | Stage, e.g. 'prod', 'staging', 'dev', OR 'source', 'build', 'test', 'deploy', 'release' | `string` | `""` | no |
 | tags | Additional tags (e.g. map(`Visibility`,`Public`) | `map` | `{}` | no |
 
 ## Outputs
@@ -228,6 +229,7 @@ projects][gitlab] and [non-ops projects][nonops], follow us on
 
 
 
+
 **This project is also funded by the [Center for Digital Resilience][cdr].**
 
 [<img src="https://gitlab.com/digiresilience/web/digiresilience.org/-/raw/master/assets/images/cdr-logo-gray-256w.png"/>][website]
@@ -236,6 +238,7 @@ CDR builds [resilient systems][cdr-tech] to keep civil society safe online and e
 activists to regain civic space. We offer a variety of digital wellness
 services through local partner organizations. Interested? [Email
 us][cdr-email].
+
 
 
 
