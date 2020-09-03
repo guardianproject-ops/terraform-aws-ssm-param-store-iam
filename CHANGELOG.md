@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/compare/2.0.0...3.0.0) (2020-09-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to terraform 0.13
+
+### Features
+
+* upgrade to terraform 0.13 ([f498959](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/commit/f4989591c8ffb2ed575e3db2edafbbe428cae542))
+
 ## [2.0.0](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/compare/1.1.0...2.0.0) (2020-07-02)
 
 
