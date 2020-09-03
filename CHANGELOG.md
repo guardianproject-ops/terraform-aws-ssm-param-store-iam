@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/compare/3.0.0...3.0.1) (2020-09-03)
+
+
+### Bug Fixes
+
+* upgrade null label dependency ([e29620c](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/commit/e29620cf4a78dc69768034a35bdcce1e29aa063a))
+
 ## [3.0.0](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/compare/2.0.0...3.0.0) (2020-09-03)
 
 
