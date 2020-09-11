@@ -29,7 +29,7 @@ usage: |-
 
   ```hcl
   module "ssm_param_store_iam_role" {
-    source          = "git::https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam?ref=tags/0.1.0"
+    source          = "git::https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam?ref=master"
 
     path_prefix = var.name
     namespace   = var.namespace
