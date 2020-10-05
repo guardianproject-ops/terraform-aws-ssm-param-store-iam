@@ -83,6 +83,18 @@ data "aws_iam_policy_document" "default_with_kms" {
       "arn:aws:ssm:${var.region}:${data.aws_caller_identity.current.account_id}:parameter${local.full_prefix}/*",
     ]
   }
+
+  statement {
+    actions = [
+      "ssm:GetParameter",
+      "ssm:GetParametersByPath",
+      "ssm:GetParameters",
+    ]
+
+    resources = [
+      "arn:aws:ssm:${var.region}:${data.aws_caller_identity.current.account_id}:parameter${local.full_prefix}",
+    ]
+  }
 }
 
 resource "aws_iam_policy" "default_with_kms" {
