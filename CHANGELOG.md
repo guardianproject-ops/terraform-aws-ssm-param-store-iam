@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/compare/3.1.0...3.2.0) (2020-10-05)
+
+
+### Features
+
+* Give access to bare prefix level ([7d96da9](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/commit/7d96da9b116f2152fce356b869da103dd3a79e60))
+
 ## [3.1.0](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/compare/3.0.1...3.1.0) (2020-09-17)
 
 
