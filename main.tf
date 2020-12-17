@@ -25,7 +25,7 @@ locals {
   labels                    = [for l in local.label_order : local.id_context[l] if length(local.id_context[l]) > 0]
   label_prefix              = lower(join(module.label.delimiter, local.labels))
   path_prefix_name_friendly = replace(var.path_prefix, "/[^a-zA-Z0-9-]/", "-")
-  full_prefix_input         = var.prefix_with_label ? "${local.label_prefix}/${var.path_prefix}" : "${var.path_prefix}"
+  full_prefix_input         = var.prefix_with_label ? "${local.label_prefix}/${var.path_prefix}" : var.path_prefix
   full_prefix               = substr(local.full_prefix_input, 0, 1) == "/" ? local.full_prefix_input : "/${local.full_prefix_input}"
 }
 
