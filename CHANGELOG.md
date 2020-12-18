@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.1](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/compare/3.2.0...3.2.1) (2020-12-18)
+
+
+### Bug Fixes
+
+* remove terraform 11 style interpolation ([035ba68](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/commit/035ba68eb7065c3a3c698853227be3dad25c3f66))
+
 ## [3.2.0](https://gitlab.com/guardianproject-ops/terraform-aws-ssm-param-store-iam/compare/3.1.0...3.2.0) (2020-10-05)
 
 
