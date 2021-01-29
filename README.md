@@ -184,7 +184,7 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 ## Credits & License 
 
 
-Copyright © 2017-2020 [Guardian Project][website]
+Copyright © 2017-2021 [Guardian Project][website]
 
 
 
